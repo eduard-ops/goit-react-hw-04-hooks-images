@@ -11,7 +11,6 @@ export default class GalleryApiService {
     this.per_page = 12;
   }
   async fetchGallery() {
-    console.log(this);
     const url = await axios.get('/api/', {
       params: {
         key: API_KEY,

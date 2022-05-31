@@ -36,13 +36,14 @@ export default function ImageGallery({ imageName }) {
           setSpiner(true);
           const fetcApi = await api.fetchGallery();
           const { hits, totalHits } = fetcApi;
-          setImages([...hits]);
+          setPage(1);
+          setImages(hits);
           setTotalPage(totalHits);
           setSpiner(false);
           setPrevName(imageName);
         }
 
-        if (page !== 1) {
+        if (page !== 1 && imageName === prevName) {
           setSpiner(true);
           const loadMore = await api.fetchGallery();
           const { hits } = loadMore;
@@ -81,7 +82,6 @@ export default function ImageGallery({ imageName }) {
     setTags(tags);
     openModal();
   };
-
   return (
     <>
       <ul className="gallery">
