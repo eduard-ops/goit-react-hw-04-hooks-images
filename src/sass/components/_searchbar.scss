@@ -1,0 +1,38 @@
+.header {
+  padding-top: 10px;
+  background-color: rgb(75, 75, 253);
+  padding-bottom: 10px;
+}
+
+.header-form {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+
+.header-form__input-search {
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 6px;
+  width: 400px;
+  border: transparent;
+  outline: none;
+}
+
+.header-form__button-search {
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  & > svg {
+    fill: gray;
+
+    &:hover,
+    &:focus {
+      fill: black;
+    }
+  }
+}
