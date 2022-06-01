@@ -31,9 +31,9 @@ export default function ImageGallery({ imageName }) {
     const fetchApiServise = async () => {
       try {
         if (imageName !== prevName) {
+          setSpiner(true);
           api.resetPage();
           api.query = imageName;
-          setSpiner(true);
           const fetcApi = await api.fetchGallery();
           const { hits, totalHits } = fetcApi;
           setPage(1);
