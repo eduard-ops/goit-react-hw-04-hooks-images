@@ -48,6 +48,12 @@ export default function ImageGallery({ imageName }) {
           const loadMore = await api.fetchGallery();
           const { hits } = loadMore;
           setImages(prevState => [...prevState, ...hits]);
+          setTimeout(() => {
+            window.scrollTo({
+              top: document.documentElement.scrollHeight,
+              behavior: 'smooth',
+            });
+          }, 0);
           setSpiner(false);
         }
       } catch (error) {
